@@ -19,22 +19,22 @@ def autonomous_function():
     
     intake_1st_stage.spin(REVERSE)
     intake_2nd_stage.spin(FORWARD)
+
     wait(1000, MSEC)
+    reset_odometry()
+
     pid_driver.drive(550)
-    pid_turner.turn(80, FRAME_HEADING_RELATIVE)
+    pid_turner.turn(50, FRAME_HEADING_RELATIVE)
     pid_driver.drive(270)
     
     wait(1000, MSEC)
     reset_odometry()
     
-    pid_driver.drive(-150)
-    pid_turner.turn(20, FRAME_HEADING_RELATIVE)
-    pid_driver.drive(170)
 
     reset_odometry()
 
-    pid_turner.turn(100, FRAME_HEADING_RELATIVE)
-    pid_driver.drive(500, False)
+    pid_turner.turn(-100, FRAME_HEADING_RELATIVE)
+    pid_driver.drive(-600, False)
 
     # pid_driver.drive(-150)
     # pid_turner.turn(120, FRAME_HEADING_RELATIVE)
