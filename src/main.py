@@ -24,7 +24,7 @@ def autonomous_function():
     reset_odometry()
 
     pid_driver.drive(550)
-    pid_turner.turn(70, FRAME_HEADING_RELATIVE)
+    pid_turner.turn(60, FRAME_HEADING_RELATIVE)
     pid_driver.drive(270)
     
     wait(1000, MSEC)
