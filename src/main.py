@@ -9,6 +9,7 @@ def driver_function():
     pass
 
 def autonomous_function():
+    PositionWithHeading(1500, -600, 90)
     intake_1st_stage.set_velocity(470, RPM)
     intake_2nd_stage.set_velocity(470, RPM)
     pid_driver.drive(-1000, True)
@@ -54,4 +55,5 @@ def autonomous_function():
 init_event_handling()
 
 # register the competition functions
+
 competition = Competition(driver_function, autonomous_function)
