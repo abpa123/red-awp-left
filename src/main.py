@@ -9,7 +9,9 @@ def driver_function():
     pass
 
 def autonomous_function():
+    # PositionWithHeading has no effect but tells SVG diagram generator where to start
     PositionWithHeading(1500, -600, 90)
+
     intake_1st_stage.set_velocity(470, RPM)
     intake_2nd_stage.set_velocity(470, RPM)
     pid_driver.drive(-1000, True)
