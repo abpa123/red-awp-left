@@ -5,21 +5,26 @@ from high_stakes.events import *
 
 open_log("red-awp-left.csv")
 
+
 def driver_function():
     pass
 
+
 def autonomous_function():
-    # PositionWithHeading has no effect but tells SVG diagram generator where to start
-    PositionWithHeading(-1500, 600, -90)
+    # Reset odometry to the starting autonomous position
+    odometry.reset(PositionWithHeading(-1500, 600, -90))
+
+    # Then try resetting it to GPS if GPS sensor is installed and reports high quality
+    reset_odometry()
 
     intake_1st_stage.set_velocity(470, RPM)
     intake_2nd_stage.set_velocity(470, RPM)
     pid_driver.drive(-1000, True)
     clamp.set(True)
     pid_turner.turn(80, FRAME_HEADING_RELATIVE)
-    
+
     reset_odometry()
-    
+
     intake_1st_stage.spin(REVERSE)
     intake_2nd_stage.spin(FORWARD)
 
@@ -29,10 +34,9 @@ def autonomous_function():
     pid_driver.drive(550)
     pid_turner.turn(60, FRAME_HEADING_RELATIVE)
     pid_driver.drive(270)
-    
+
     wait(1000, MSEC)
     reset_odometry()
-    
 
     reset_odometry()
 
@@ -51,7 +55,6 @@ def autonomous_function():
     # pid_driver.drive(-700)
     # pid_turner.turn(75, FRAME_HEADING_RELATIVE)
     # pid_driver.drive(-400)
-
 
 
 init_event_handling()
