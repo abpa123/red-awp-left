@@ -5,4 +5,4 @@
 ![redleft](https://github.com/user-attachments/assets/de5f090e-35a6-4e43-a173-d8779351d911)
 
 ## Autonomous Path
-![autonomous](svgs/autonomous.svg)
+<img src=svgs/autonomous.svg width="300" height="300"/>
