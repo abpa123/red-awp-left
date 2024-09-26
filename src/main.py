@@ -1,9 +1,9 @@
 #!/usr/bin/env -S PYTHONPATH=../telemetry python3
 
-from telemetry.log import *
+from telemetry.config_log import *
 from high_stakes.events import *
 
-open_log("red-awp-left.csv")
+config_open_log()
 
 
 def driver_function():
