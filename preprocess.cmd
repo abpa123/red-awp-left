@@ -1,1 +1,1 @@
-python ..\\telemetry\\scripts\\preprocess.py
+python ..\\telemetry\\scripts\\preprocess.py %*
